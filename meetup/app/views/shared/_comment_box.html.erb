@@ -13,3 +13,12 @@
     <% end %>
   </div>
 </article>
+<script>
+    var commenter_exist = [];
+    $('.reply .name a').each(function() {
+        if($.inArray($(this).text(), commenter_exist) < 0) {
+            commenter_exist.push($(this).text());
+        }
+    });
+    $('textarea').atwho({ at: "@", 'data': commenter_exist });
+</script>
