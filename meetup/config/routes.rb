@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   # issues
   resources :issues
   resources :users, only: [:create]
+  resources :comments, only: [:create]
 
   # comments
 
