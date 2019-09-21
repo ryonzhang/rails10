@@ -1,7 +1,8 @@
 <div class="new-issue-form-container clearfix">
   <div class="new-issue-form clearfix">
-    <%= form_for issue do |f| %>
-      <dl class="form">
+    <%= form_for(Issue.new(user_id: current_user.id)) do |f| %>
+      <%= f.hidden_field :user_id %>
+      <dl class="formIssue.destroy_all">
         <dt><%= f.label :title %></dt>
         <dd><%= f.text_field :title %></dd>
       </dl>
